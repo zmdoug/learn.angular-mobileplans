@@ -5,6 +5,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatRippleModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PlanFilterComponent', () => {
   let component: PlanFilterComponent;
@@ -23,6 +24,7 @@ describe('PlanFilterComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatRippleModule,
+        NoopAnimationsModule
       ],
       declarations: [ PlanFilterComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
@@ -39,4 +41,5 @@ describe('PlanFilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarModule } from './navbar/navbar.module';
 import { PlansComponent } from './pages/plans/plans.component';
 import { HomeComponent } from './pages/home/home.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
 import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -26,13 +26,13 @@ describe('AppComponent', () => {
         MatInputModule,
         MatSelectModule,
         NavbarModule,
-        PlanFilterModule
+        PlanFilterModule,
+        NoopAnimationsModule
       ],
       declarations: [
         AppComponent,
         PlansComponent,
-        HomeComponent,
-        FooterComponent
+        HomeComponent
       ],
     }).compileComponents();
   }));

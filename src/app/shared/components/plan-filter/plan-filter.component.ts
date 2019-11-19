@@ -25,9 +25,9 @@ export class PlanFilterComponent implements OnInit {
     this.destinationList = this.zoneList['to'];
 
     this.form = new FormGroup({
-      from: new FormControl(''),
-      to: new FormControl(''),
-      duration: new FormControl(20)
+      from: new FormControl('', []),
+      to: new FormControl('', []),
+      duration: new FormControl(20, [])
     });
 
     this.form.valueChanges.subscribe(() => this.setOutput());

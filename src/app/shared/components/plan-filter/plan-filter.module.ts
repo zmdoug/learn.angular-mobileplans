@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlanFilterComponent } from './plan-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatSelectModule, MatFormFieldModule } from '@angular/material';
+import { MatInputModule, MatSelectModule, MatFormFieldModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [PlanFilterComponent],
@@ -18,9 +18,10 @@ import { MatInputModule, MatSelectModule, MatFormFieldModule } from '@angular/ma
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatSelectModule,
-  ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    MatButtonModule
+  ]
 })
 export class PlanFilterModule { }

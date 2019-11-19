@@ -11,6 +11,7 @@ import {
 
 import { NavbarComponent } from './navbar.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -18,7 +19,7 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent],
+      declarations: [NavbarComponent, FooterComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,

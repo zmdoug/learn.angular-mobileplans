@@ -9,7 +9,6 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { PlansComponent } from './pages/plans/plans.component';
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.module';
 
@@ -17,8 +16,7 @@ import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.mo
   declarations: [
     AppComponent,
     PlansComponent,
-    HomeComponent,
-    FooterComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +33,6 @@ import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.mo
     PlanFilterModule
   ],
   exports: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
