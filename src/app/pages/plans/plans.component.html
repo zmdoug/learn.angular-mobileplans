@@ -1,33 +1,53 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-    <h6 class="title">Nossos planos</h6>
+<div class="content-sized">
+  <div class="row m-0">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+      <plan-filter (selectedFilter)="showPlans($event)"></plan-filter>
+    </div>
+  </div>
+  <div class="row m-3" *ngIf="filteredPlan && filteredPlan.to">
+    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 p-2" *ngFor="let plan of filteredPlan.to">
+      <mat-card class="example-card" >
+        <div class="row m-0">
+          <div class="col-8 col-sm-8 col-xs-8 col-md-8 p-0">
+            <mat-card-title>CHAMADA</mat-card-title>
+            <mat-card-subtitle class="subtitle-duration"> <mat-icon>hourglass_empty</mat-icon>
+              {{filteredPlan.duration >= 0 ? filteredPlan.duration : 0}} MINUTOS
+            </mat-card-subtitle>
+          </div>
+          <div class="col-4 col-sm-4 col-xs-4 col-md-4 text-right p-0">
+            <mat-icon>settings_phone</mat-icon> DE {{filteredPlan.from}}
+            <h6><mat-icon>call_missed_outgoing</mat-icon> {{plan}}</h6>
+          </div>
+        </div>
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              Sem plano <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 0 )}}</span>
+            </mat-list-item>
+            <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(30, filteredPlan.duration)}">
+              FaleMais 30
+              <span class="is-recommended d-none d-sm-block">
+                {{isRecommended(30, filteredPlan.duration) ? 'Recomendado' : ''}}
+              </span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 30)}}</span>
+            </mat-list-item>
+            <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(60, filteredPlan.duration)}">
+              FaleMais 60
+              <span class="is-recommended d-none d-sm-block">
+                {{isRecommended(60, filteredPlan.duration) ? 'Recomendado' : ''}}
+              </span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 60)}}</span>
+            </mat-list-item>
+            <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(120, filteredPlan.duration)}">
+              FaleMais 120
+              <span class="is-recommended d-none d-sm-block">
+                {{isRecommended(120, filteredPlan.duration) ? 'Recomendado' : ''}}
+              </span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 120)}}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>
-<div class="row mt-5">
-  <div class="col-md-12 col-lg-12 col-sm-6 col-xs-6">
-    <plan-filter ></plan-filter>
-  </div>
-  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>FALE MAIS</mat-card-title>
-        <mat-card-subtitle>80 MINUTOS</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list role="list">
-          <mat-list-item role="listitem">
-            FaleMais 30 <span class="plan-value">$37,40</span>
-          </mat-list-item>
-          <mat-list-item role="listitem">
-            FaleMais 60 <span class="plan-value">$27,40</span>
-          </mat-list-item>
-          <mat-list-item role="listitem" class="recommended-plan">
-            FaleMais 120 <span class="plan-value">$0,00</span>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-
-  </div>
-</div>
-

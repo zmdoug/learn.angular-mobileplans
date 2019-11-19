@@ -5,6 +5,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h6 {
   font-size: 22px;
 }
-.content {
-  margin: 32px 16px;
+
+:focus {outline:0 !important;}
+
+.logo {
+  width: 140px;
+  height: 25px;
+  background: url(./assets/logo-white.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }

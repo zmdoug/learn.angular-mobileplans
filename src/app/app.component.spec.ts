@@ -1,15 +1,38 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatListModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatCardModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarModule } from './navbar/navbar.module';
+import { PlansComponent } from './pages/plans/plans.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatListModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        NavbarModule,
+        PlanFilterModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        PlansComponent,
+        HomeComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +43,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'telzir'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('telzir');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to telzir!');
-  });
 });

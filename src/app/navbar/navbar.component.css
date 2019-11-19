@@ -15,3 +15,23 @@
   top: 0;
   z-index: 1;
 }
+
+.menu-item {
+  padding: 0 14px;
+  color: #FFFFFF;
+  font-weight: 200;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.topbar-row {
+  max-width: 960px;
+  margin: 0 auto;
+}

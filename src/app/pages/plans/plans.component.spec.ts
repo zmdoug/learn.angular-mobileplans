@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlansComponent } from './plans.component';
+import { PlanFilterComponent } from 'src/app/shared/components/plan-filter/plan-filter.component';
+import { MatCardModule, MatIconModule, MatListModule, MatButtonModule } from '@angular/material';
 
 describe('PlansComponent', () => {
   let component: PlansComponent;
@@ -8,7 +10,13 @@ describe('PlansComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlansComponent ]
+      imports: [
+        MatCardModule,
+        MatIconModule,
+        MatListModule,
+        MatButtonModule
+      ],
+      declarations: [ PlansComponent, PlanFilterComponent ]
     })
     .compileComponents();
   }));

@@ -1,8 +1,41 @@
-<div class="row">
-  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 p-4">
-    <h6>Encontre seu plano:</h6>
+<div class="row m-0 plan-choose">
+  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+    <h6 class="mb-3">Compare nossos preços e planos</h6>
     <div class="plan-filter">
-
+      <form formGroup="form">
+        <div class="row">
+          <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-center p-2">
+            <mat-form-field appearance="outline" >
+              <mat-label>Origem da chamada</mat-label>
+              <mat-select formControlName="from" (selectionChange)="setOrigin($event)">
+                <mat-option *ngFor="let zone of zoneList['from']" [value]="zone">{{zone}}</mat-option>
+              </mat-select>
+              <mat-hint>DDD</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-center p-2" *ngIf="origin">
+            <mat-form-field appearance="outline">
+              <mat-label>Destino(s) da chamada</mat-label>
+              <mat-select formControlName="to" multiple>
+                <mat-option *ngFor="let zone of destinationList" [value]="zone">{{zone}}</mat-option>
+              </mat-select>
+              <mat-hint>DDD</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-center p-2" *ngIf="origin">
+            <button mat-icon-button aria-label="Diminuir o tempo da chamada" (click)="setDuration('minus')">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <mat-form-field appearance="outline" class="duration-field">
+              <mat-label>Duração</mat-label>
+              <input matInput formControlName="duration">
+            </mat-form-field>
+            <button mat-icon-button aria-label="Aumentar o tempo da chamada" (click)="setDuration('plus')">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

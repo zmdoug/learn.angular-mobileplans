@@ -1,7 +1,21 @@
+.content-sized {
+  max-width: 960px;
+  margin: 0 auto 100px auto;
+}
 .plan-value {
-    margin-left: auto;
+  margin-left: auto;
+  min-width: 60px;
+}
+.is-recommended {
+  margin-left: auto;
+  font-size: 13px;
+  color: #673ab7;
 }
 .recommended-plan {
   border: 1px solid rgb(88, 41, 163);
   border-radius: 4px;
+}
+.subtitle-duration {
+  display: flex;
+  align-items: center;
 }

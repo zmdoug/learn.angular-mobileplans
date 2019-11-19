@@ -1,35 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule } from '@angular/material';
 import { PlansComponent } from './pages/plans/plans.component';
-import { PlanFilterComponent } from './shared/components/plan-filter/plan-filter.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { NavbarModule } from './navbar/navbar.module';
+import { PlanFilterModule } from './shared/components/plan-filter/plan-filter.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     PlansComponent,
-    PlanFilterComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatListModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    MatCardModule
+    MatCardModule,
+    NavbarModule,
+    PlanFilterModule
   ],
+  exports: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,20 @@
 .plan-filter {
-  background-color: #cecece;
+  background-color: #efefef;
   min-height: 80px;
   color: #212121;
   border-radius: 8px;
+  padding: 16px;
+}
+
+.duration-field {
+  width: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.plan-choose {
+  background: url(https://images.unsplash.com/photo-1516055619834-586f8c75d1de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  min-height: 400px;
+  border-radius: 0 0 8px 8px;
+  padding: 24px 16px;
 }
