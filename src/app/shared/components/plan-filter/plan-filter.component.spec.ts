@@ -42,4 +42,24 @@ describe('PlanFilterComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should not have `from` in `to` zone', () => {
+    let objEvent = {
+        value: '011'
+    };
+    component.setOrigin(objEvent);
+    expect(component.destinationList.includes(objEvent.value)).toBeFalsy();
+  });
+
+  it('should decrease form duration', () => {
+    component.form.get('duration').setValue(40);
+    component.setDuration('minus');
+    expect(component.form.get('duration').value).toEqual(20);
+  });
+
+  it('should increase form duration', () => {
+    component.form.get('duration').setValue(40);
+    component.setDuration('plus');
+    expect(component.form.get('duration').value).toEqual(60);
+  });
+
 });

@@ -1,27 +1,54 @@
 # Telzir
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Projeto utilizando Angular CLI versão 7.3.8.
 
-## Development server
+## Requisitos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+git, angular-cli, npm
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick Start
+
+git clone https://github.com/zmdoug/telzir.git
+
+## Instalando as dependências:
+
+npm install
+
+## Rodando a aplicação
+
+Digite o comando `npm start` dentro da pasta do projeto 'telzir'. 
+O projeto será carregado em `http://localhost:4200/` no navegador. 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Digite `ng build` para compilar o projeto. Após a conclusão será criada a pasta `dist/` 
+ dentro da pasta raíz do projeto. Use a flag `--prod` para produção.
 
-## Running unit tests
+## Testes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Digite `ng test` para executar os testes via [Karma](https://karma-runner.github.io). 
+Uma janela será aberta para acompanhar o resultado.
+O teste apresentará 17 validações.
 
-## Running end-to-end tests
+## Estrutura
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+As pastas do projeto representam:
 
-## Further help
+.
+../src - Source do projeto
+../src/app/ - Arquivos da aplicação
+../src/app/navbar - Componente de navegação
+../src/app/pages - Páginas da aplicação
+../src/app/services - Serviços
+../src/app/shared - Componentes compartilhados
+../src/app/app-routing.module.ts - Roteamento de páginas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Arquivos:
+
+*.module.ts - Arquivo de importação, dependências
+*.service.ts - Arquivo de services, requisições
+*.component.ts - Arquivo de execução do componente
+*.component.html - Arquivo estrutural do componente
+*.component.scss - Arquivo de estilos do componente
+*.component.sec.ts - Arquivo de testes unitário do componente

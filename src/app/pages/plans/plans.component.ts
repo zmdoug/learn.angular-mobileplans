@@ -23,7 +23,7 @@ export class PlansComponent implements OnInit {
   showPlans = (filter) => this.filteredPlan = filter;
 
   isRecommended = (plan, duration) => {
-    /* Get the recommended plan */
+    /* return true if is a recommended plan */
     let closest = this.planConfig['minutes'].reduce(function(prev, curr) {
       return (Math.abs(curr - duration) < Math.abs(prev - duration) ? curr : prev);
     });
@@ -33,7 +33,7 @@ export class PlansComponent implements OnInit {
 
   getPrice(origin: string, destination: string, planMinutes:number) {
 
-    /* Get zone plan price */
+    /* retrieve zone plan price */
     let plan = this.priceList.filter(function (plan) {
       return plan.from === origin && plan.to === destination;
     });
@@ -50,7 +50,7 @@ export class PlansComponent implements OnInit {
         planPrice = this.filteredPlan.duration * plan[0]['price'];
       }
 
-      return planPrice > 0 ? '$' + planPrice.toFixed(2) : '$' + 0.00;
+      return planPrice > 0 ? planPrice.toFixed(2) : 0;
     } else {
       return 'Não disponível';
     }

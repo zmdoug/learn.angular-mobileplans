@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar.component';
-import { MatListModule, MatSidenavModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { MatListModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 
@@ -13,8 +13,10 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
+    MatButtonModule,
   ],
   exports: [NavbarComponent],
   declarations: [NavbarComponent, FooterComponent]
 })
+
 export class NavbarModule { }
