@@ -29,21 +29,21 @@
               <span class="is-recommended d-none d-sm-block">
                 {{isRecommended(30, filteredPlan.duration) ? 'Recomendado' : ''}}
               </span>
-              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 30)}}</span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 30) | currency: 'R$ '}}</span>
             </mat-list-item>
             <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(60, filteredPlan.duration)}">
               FaleMais 60
               <span class="is-recommended d-none d-sm-block">
                 {{isRecommended(60, filteredPlan.duration) ? 'Recomendado' : ''}}
               </span>
-              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 60)}}</span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 60) | currency: 'R$ '}}</span>
             </mat-list-item>
             <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(120, filteredPlan.duration)}">
               FaleMais 120
               <span class="is-recommended d-none d-sm-block">
                 {{isRecommended(120, filteredPlan.duration) ? 'Recomendado' : ''}}
               </span>
-              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 120)}}</span>
+              <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 120) | currency: 'R$ '}}</span>
             </mat-list-item>
           </mat-list>
         </mat-card-content>

@@ -52,7 +52,7 @@ export class PlansComponent implements OnInit {
 
       return planPrice > 0 ? planPrice.toFixed(2) : 0;
     } else {
-      return 'Não disponível';
+      return null;
     }
   }
 }

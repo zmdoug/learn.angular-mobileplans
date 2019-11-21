@@ -15,12 +15,14 @@ export class PlanFilterComponent implements OnInit {
   public origin;
   public zoneList: object;
   public destinationList = [];
+  public priceList = [];
 
   constructor(private planService: PlanService) { }
 
   ngOnInit() {
 
     this.zoneList = this.planService.getZoneList();
+    this.priceList = this.planService.getPriceList();
 
     this.destinationList = this.zoneList['to'];
 
@@ -35,14 +37,15 @@ export class PlanFilterComponent implements OnInit {
 
   setOrigin(event) {
     this.origin = event.value;
-    /** remove origin zone from destination list */
+    /** set destination list */
     this.destinationList = [];
-    this.zoneList['from'].forEach(element => {
-      if (element !== event.value)  {
-        this.destinationList.push(element);
+    this.priceList.forEach(element => {
+      if(element.from === this.origin) {
+        this.destinationList.push(element.to);
       }
     });
     this.form.get('to').setValue([]);
+    this.setDuration(this.form.get('duration').value);
   }
 
   setDuration(operator) {
