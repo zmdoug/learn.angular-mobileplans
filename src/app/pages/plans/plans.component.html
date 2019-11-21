@@ -22,7 +22,7 @@
         <mat-card-content>
           <mat-list role="list">
             <mat-list-item role="listitem">
-              Sem plano <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 0 )}}</span>
+              Sem plano <span class="plan-value"> {{getPrice(filteredPlan.from, plan, 0 ) | currency: 'R$ '}}</span>
             </mat-list-item>
             <mat-list-item role="listitem" [ngClass]="{'recommended-plan': isRecommended(30, filteredPlan.duration)}">
               FaleMais 30
