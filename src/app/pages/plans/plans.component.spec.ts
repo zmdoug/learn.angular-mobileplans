@@ -37,8 +37,8 @@ describe('PlansComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return Não disponível', () => {
-    expect(component.getPrice('011', '011', 200)).toBe('Não disponível');
+  it('should return null for price', () => {
+    expect(component.getPrice('011', '011', 200)).toBeNull();
   });
 
   it('should return a price', () => {
